@@ -3,6 +3,34 @@
 クリーンアーキテクチャ + Spring Boot の実装例です  
 クリーンアーキテクチャの依存ルールを守らせるためのモジュール構造としています
 
+## Module Structure
+
+```mermaid
+flowchart BT
+  subgraph entities
+    task-entity
+  end
+  subgraph use-cases
+    task-manage-use-case
+    task-view-use-case
+    task-view-use-case-query
+  end
+  subgraph gateways
+    postgresql-gateway
+  end
+  subgraph apps
+    task-manager-app
+    task-viewer-app
+  end
+  task-manage-use-case --> task-entity
+  task-view-use-case-query --> task-entity
+  task-view-use-case --> task-entity & task-view-use-case-query
+  postgresql-gateway ---> task-entity & task-view-use-case-query
+  task-manager-app --> task-entity & task-manage-use-case & postgresql-gateway
+  task-viewer-app --> task-entity & task-view-use-case & postgresql-gateway
+```
+- A → B は依存の方向 (A が B に依存する)
+
 ## Usage
 
 1. 開発用インフラの起動
