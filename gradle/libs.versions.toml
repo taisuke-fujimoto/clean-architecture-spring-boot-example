@@ -1,0 +1,9 @@
+[versions]
+kotlin = "2.1.10"
+
+[libraries]
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-allopen = { module = "org.jetbrains.kotlin:kotlin-allopen", version.ref = "kotlin" }
+ktlint-gradle = { module = "org.jlleitschuh.gradle:ktlint-gradle", version = "12.1.2" }
+spring-boot-gradle-plugin = { module = "org.springframework.boot:spring-boot-gradle-plugin", version = "3.4.3" }
+gradle-docker-compose-plugin = { module = "com.avast.gradle:gradle-docker-compose-plugin", version = "0.17.12" }

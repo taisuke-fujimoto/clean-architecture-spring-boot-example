@@ -1,0 +1,7 @@
+[*.{kt,kts}]
+ktlint_code_style = intellij_idea
+ktlint_standard_function-signature = disabled
+
+ij_kotlin_spaces_around_equality_operators = true
+ij_continuation_indent_size = 4
+ij_kotlin_packages_to_use_import_on_demand = unset

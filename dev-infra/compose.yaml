@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:17.4
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - type: volume
+        source: db-data
+        target: /var/lib/postgresql/data
+      - type: bind
+        source: ./initdb
+        target: /docker-entrypoint-initdb.d
+
+volumes:
+  db-data:
