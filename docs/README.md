@@ -1,7 +1,7 @@
 # clean-architecture-spring-boot-example
 
 クリーンアーキテクチャ + Spring Boot の実装例です  
-クリーンアーキテクチャの依存ルールを守らせるためのモジュール構造になっています
+クリーンアーキテクチャの依存ルールを守らせるためのモジュール構造としています
 
 ## Usage
 
@@ -9,6 +9,7 @@
    ```shell
    ./gradlew dev-infra:composeUp
    ```
+   - 5432 ポートを DB が使用
 
 2. task-manager-app の実行
    ```shell
