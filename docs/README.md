@@ -36,22 +36,19 @@ flowchart BT
   <tbody>
     <tr>
       <th>task-entity</th>
-      <td>TaskEntity と、それの保存・取得の interface を提供</td>
+      <td>TaskEntity と、それの保存・取得 interface を提供 (実装は gateway モジュール)</td>
     </tr>
     <tr>
       <th>task-manage-use-case</th>
-      <td>タスク管理の use-case を提供 (use-case の実装クラスも配置)</td>
+      <td>タスク管理の use-case interface を提供 (実装も同居)</td>
     </tr>
     <tr>
       <th>task-view-use-case</th>
-      <td>タスク一覧参照の use-case を提供 (use-case の実装クラスも配置)</td>
+      <td>タスク一覧参照の use-case interface を提供 (実装も同居)</td>
     </tr>
     <tr>
       <th>task-view-use-case-query</th>
-      <td>
-        task-view-use-case 用のクエリの interface を提供<br>
-        task-view-use-case 内にクエリ inteface を置くことも可能だが、別モジュールにすることで task-view-use-case の依存モジュール (= task-viewer-app) からクエリ inteface を参照できないようにできる<br>
-      </td>
+      <td>task-view-use-case 用のクエリ interface を提供 (実装は gateway モジュール)</td>
     </tr>
     <tr>
       <th>postgresql-gateway</th>
