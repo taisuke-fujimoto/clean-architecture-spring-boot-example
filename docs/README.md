@@ -9,6 +9,8 @@
 flowchart BT
   subgraph entities
     task-entity
+    task-entity-reader
+    task-entity-writer
   end
   subgraph use-cases
     task-manage-use-case
@@ -22,21 +24,32 @@ flowchart BT
     task-manager-app
     task-viewer-app
   end
-  task-manage-use-case --> task-entity
+  task-entity-reader --> task-entity
+  task-entity-writer --> task-entity
+  task-manage-use-case --> task-entity & task-entity-reader & task-entity-writer
   task-view-use-case-query --> task-entity
   task-view-use-case --> task-entity & task-view-use-case-query
-  postgresql-gateway ---> task-entity & task-view-use-case-query
+  postgresql-gateway ---> task-entity & task-entity-reader & task-entity-writer & task-view-use-case-query
   task-manager-app --> task-entity & task-manage-use-case & postgresql-gateway
   task-viewer-app --> task-entity & task-view-use-case & postgresql-gateway
 ```
 - A → B は依存の方向 (A が B に依存する)
 
-## Module Summary
+## Module Overview
+
 <table>
   <tbody>
     <tr>
       <th>task-entity</th>
-      <td>TaskEntity と、それの保存・取得 interface を提供 (実装は gateway モジュール)</td>
+      <td>TaskEntity を提供</td>
+    </tr>
+    <tr>
+      <th>task-entity-reader</th>
+      <td>TaskEntity の取得 interface を提供 (実装は gateway モジュール)</td>
+    </tr>
+    <tr>
+      <th>task-entity-writer</th>
+      <td>TaskEntity の保存 interface を提供 (実装は gateway モジュール)</td>
     </tr>
     <tr>
       <th>task-manage-use-case</th>
