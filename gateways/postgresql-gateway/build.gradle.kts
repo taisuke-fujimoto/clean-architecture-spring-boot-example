@@ -4,6 +4,8 @@ plugins {
 
 dependencies {
     implementation(project(":entities:task-entity"))
+    implementation(project(":entities:task-entity-reader"))
+    implementation(project(":entities:task-entity-writer"))
     implementation(project(":use-cases:task-view-use-case-query"))
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
