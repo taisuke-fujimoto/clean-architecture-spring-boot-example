@@ -3,6 +3,8 @@
 クリーンアーキテクチャ + Spring Boot の実装例です  
 モジュールの依存方向とクリーンアーキテクチャのレイヤーの依存方向を一致させて、クリーンアーキテクチャの依存ルールを守ります
 
+- [クリーンアーキテクチャ採用時のモジュール分割のすゝめ (Gradle, Kotlin)](https://note.com/pa_tf/n/n0b10d4b98782)
+
 ## Module Structure
 
 ```mermaid
